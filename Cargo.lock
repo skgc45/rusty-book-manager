@@ -12,6 +12,7 @@ dependencies = [
  "kernel",
  "shared",
  "sqlx",
+ "uuid",
 ]
 
 [[package]]
@@ -73,8 +74,15 @@ checksum = "74f37166d7d48a0284b99dd824694c26119c700b53bf0d1540cdb147dbdaaf13"
 name = "api"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "axum",
+ "derive-new",
+ "kernel",
  "registry",
+ "serde",
+ "shared",
+ "thiserror",
+ "uuid",
 ]
 
 [[package]]
@@ -750,7 +758,10 @@ dependencies = [
 name = "kernel"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "async-trait",
+ "shared",
+ "uuid",
 ]
 
 [[package]]
@@ -1792,6 +1803,10 @@ name = "uuid"
 version = "1.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a"
+dependencies = [
+ "getrandom",
+ "serde",
+]
 
 [[package]]
 name = "vcpkg"
