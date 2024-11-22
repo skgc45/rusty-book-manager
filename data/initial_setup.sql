@@ -4,7 +4,7 @@ VALUES ('Admin'),
 INSERT INTO users (name, email, password_hash, role_id)
 SELECT 'Eleazar Fig',
     'eleazar.fig@example.com',
-    '$2b$12$8bm6U1pRl72KpIpqi9kg7elMY.tgsWXs32pTtRpQa49jZ0dtFrn3q',
+    '$2b$12$9T1bSa3UN2vsKmYpxitZmOB1Cg4htPKkfXcK6Nm.8d3TuO1oFBlsq',
     role_id
 FROM roles
 WHERE name LIKE 'Admin';
