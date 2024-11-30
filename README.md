@@ -25,3 +25,13 @@
 - .github: GitHub Actions の設定ファイルが主に含まれています。
 - infra: AWS 上にリソースを構築し、デプロイやリリースを一通り体験したい場合に必要です。セットアップの方法については、[README](./infra/README.md)に記載しています。
 - frontend: rust-book-manager の UI を立ち上げたい場合に必要です。立ち上げる方法は、[README](./frontend/README.md)に記載しています。
+
+```:bash
+cargo make psql
+cargo make initial-setup
+
+curl -v -X POST "http://localhost:8080/auth/login" -H 'content-type: application/json' -d '{"email":"eleazar.fig@example.com", "password": "pa55w0rd"}'
+
+curl -v "http://localhost:8080/api/v1/users" -H 'Authorization: Bearer 5fc49e05d6fa4557a1f90a1d0281f541' | jq
+curl -v -X POST "http://localhost:8080/api/v1/users" -H 'Authorization: Bearer 5fc49e05d6fa4557a1f90a1d0281f541'  -H 'content-type: application/json' -d '{"name": "yamada", "email": "yamada@example.com", "password":"hogehoge"}'
+```
