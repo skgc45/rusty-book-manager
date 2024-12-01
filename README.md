@@ -34,4 +34,7 @@ curl -v -X POST "http://localhost:8080/auth/login" -H 'content-type: application
 
 curl -v "http://localhost:8080/api/v1/users" -H 'Authorization: Bearer 5fc49e05d6fa4557a1f90a1d0281f541' | jq
 curl -v -X POST "http://localhost:8080/api/v1/users" -H 'Authorization: Bearer 5fc49e05d6fa4557a1f90a1d0281f541'  -H 'content-type: application/json' -d '{"name": "yamada", "email": "yamada@example.com", "password":"hogehoge"}'
+
+curl -v "http://localhost:8080/api/v1/books" -H 'Authorization: Bearer 29b3a8d3ae9d424896d3fc3ef29cc1a0' | jq
+curl -v -X POST "http://localhost:8080/api/v1/books" -H 'Authorization: Bearer 29b3a8d3ae9d424896d3fc3ef29cc1a0' -H 'content-type: application/json' -d '{"title": "Rust book", "author": "me", "isbn": "1234567890", "description": ""}'
 ```
