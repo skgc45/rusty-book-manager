@@ -27,8 +27,10 @@
 - frontend: rust-book-manager の UI を立ち上げたい場合に必要です。立ち上げる方法は、[README](./frontend/README.md)に記載しています。
 
 ```:bash
-cargo make psql
 cargo make initial-setup
+
+cargo make psql
+\dt
 
 curl -v -X POST "http://localhost:8080/auth/login" -H 'content-type: application/json' -d '{"email":"eleazar.fig@example.com", "password": "pa55w0rd"}'
 
