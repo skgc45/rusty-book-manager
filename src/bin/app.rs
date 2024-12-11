@@ -36,7 +36,7 @@ fn init_logger() -> Result<()> {
     // 環境変数の読み込み
     let host = std::env::var("JAEGER_HOST")?;
     let port = std::env::var("JAEGER_PORT")?;
-    let endpoint = format!("{hots}:{port}");
+    let endpoint = format!("{host}:{port}");
 
     global::set_text_map_propagator(opentelemetry_jaeger::Propagator::new());
 
@@ -135,9 +135,9 @@ async fn shutdown_signal() {
             tracing::info!("Ctrl-Cを受信しました");
             purge_spans();
         },
-        _ = terminate => {
-            tracing::info!("SIGTERMを受信しました");
-            purge_spans();
-        }
+        // _ = terminate => {
+        //     tracing::info!("SIGTERMを受信しました");
+        //     purge_spans();
+        // }
     }
 }
